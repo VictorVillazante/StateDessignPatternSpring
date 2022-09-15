@@ -1,0 +1,3 @@
+GET http://localhost:8080/ventas
+###
+GET http://localhost:8080/ventas/1
