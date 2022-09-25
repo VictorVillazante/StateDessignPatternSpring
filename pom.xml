@@ -41,15 +41,37 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-admin -->
 		<dependency>
 			<groupId>com.google.firebase</groupId>
 			<artifactId>firebase-admin</artifactId>
-			<version>8.0.1</version>
-			<scope>runtime</scope>
+			<version>7.0.1</version>
 		</dependency>
 
-	</dependencies>
+	
+		<dependency>
+			<groupId>me.wojnowski</groupId>
+			<artifactId>googlecloud4s-firestore_2.13</artifactId>
+			<version>0.4.2</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-firestore</artifactId>
+			<version>1.35.2</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-firestore</artifactId>
+			<version>1.35.2</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-firestore</artifactId>
+			<version>1.35.2</version>
+		</dependency>
+ </dependencies>
 
 	<build>
 		<plugins>

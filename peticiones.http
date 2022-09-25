@@ -1,3 +1,11 @@
 GET http://localhost:8080/ventas
 ###
 GET http://localhost:8080/ventas/1
+###
+POST http://localhost:8080/ventas/add
+Content-Type: application/json
+
+{
+    "title":"wow pro nuevo",
+    "content":"content from spring"
+}
