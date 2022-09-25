@@ -39,11 +39,33 @@ public class VentasController {
     //     StateMYSQL sMysql=new StateMYSQL();
     //     sMysql.doAction(this.context);
     // }
-    StateMYSQL sMysql;
-    public VentasController(){
-        //StateFirebase sf=new StateFirebase();
-        sMysql=new StateMYSQL();
-        //sMysql.doAction(this.context);
+
+    private StateMYSQL sMysql;
+    private StateFirebase sf;
+    @Autowired
+    public VentasController(StateMYSQL s){
+        sMysql=s;
+        sf=new StateFirebase();
+    } 
+    
+
+    @GetMapping
+    public Object getVentas(){
+        try{
+            sMysql.doAction(this.context);
+            return context.getState().getVentas();
+        }catch(Exception e){
+            try {
+                sf.doAction(this.context);
+                if(context.getState().getVentas()==null){
+                    throw new Exception("");
+                }else{
+                    return context.getState().getVentas();
+                }
+            } catch (Exception e2) {
+                return "No me puedo conectar a la base de datos del servidor propio ni al de la nube";
+            }
+        }        
     }
     @GetMapping(path = "/{id}")
     public String getVentasByID(@PathVariable("id") int id){
@@ -54,19 +76,7 @@ public class VentasController {
 
 
 
-    // @Autowired
-    // private PruebaEntityRepository per;
-    @GetMapping
-    public Object getVentas(){
-        Object listado=context.getState().getVentas();
-        //return context.getState().getVentas();
-        return sMysql.getVentas();
-        // return per.findAll();
-        // List<PruebaEntity> result = pbl.getTodos();
-        // return new ResponseEntity(result,HttpStatus.OK);
-        //return new ResponseEntity(service.list(),HttpStatus.OK);
-        //return per.findAll();
-    }
+   
 
 
 

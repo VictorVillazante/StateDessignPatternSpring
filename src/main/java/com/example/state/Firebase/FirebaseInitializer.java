@@ -19,7 +19,7 @@ public class FirebaseInitializer {
     @PostConstruct
     private void initFirestore() throws IOException{
 
-        FileInputStream serviceAccount =new FileInputStream("/home/bitius/Escritorio/state-dessign-pattern/StateDessignPatternSpring/src/main/resources/firebase-state.json");
+        FileInputStream serviceAccount =new FileInputStream("/home/victor/Escritorio/design-pattern/StateDessignPatternSpring/src/main/resources/firebase-state.json");
 
         FirebaseOptions options = new FirebaseOptions.Builder()
         .setCredentials(GoogleCredentials.fromStream(serviceAccount))

@@ -15,7 +15,7 @@ public class StateFirebase implements State {
    private PostManagementServiceImpl pms=new PostManagementServiceImpl();
    
     public void doAction(Context context) {
-       System.out.println("Player is in start state");
+       System.out.println("Usando firebase");
        context.setState(this);	
     }
  
